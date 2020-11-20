@@ -19,14 +19,17 @@ const Sidebar = ({ isOpen, toggle }) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="aboutus" onClick={toggle}>
-            About Us
-          </SidebarLink>
+          <SidebarRoute to="/" onClick={toggle}>
+            Home
+          </SidebarRoute>
           <SidebarRoute to="/shop" onClick={toggle}>
             Shop
           </SidebarRoute>
-          <SidebarRoute to="/treatment" onClick={toggle}>
-            Treatment
+          <SidebarRoute to="/blog" onClick={toggle}>
+            Blog
+          </SidebarRoute>
+          <SidebarRoute to="/services" onClick={toggle}>
+            Services
           </SidebarRoute>
           <SidebarRoute to="/contactus" onClick={toggle}>
             Contact Us

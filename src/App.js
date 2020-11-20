@@ -4,49 +4,45 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignIn from "./pages/Login";
 import AddProduct from "./pages/addProduct";
+import AboutUs from "./pages/About Us";
 import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
 import Product from "./pages/Product/";
-import Treatment from "./pages/Treatment";
+import Services from "./pages/Services";
 import ContactUs from "./pages/Contact Us";
+import TreatmentType from "./pages/TreatmentType";
+import Appointment from "./pages/Appointment";
 import { DataProvider } from "./components/context";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
-  const [cartItem, setCartItem] = useState([]);
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
 
-  const cartIncrement = () => {
-    setCartCount(cartCount + 1);
-  };
-
-  const pushCart = (cart) => {
-    console.log("---cart----");
-  };
+  function check(item) {
+    console.log("item", item);
+  }
 
   return (
     <DataProvider>
       <Router className="router">
         <Sidebar isOpen={isOpen} toggle={toggle} />
-        <Navbar
-          toggle={toggle}
-          cartIncrement={cartIncrement}
-          cartCount={cartCount}
-        />
+        <Navbar toggle={toggle} />
         <Switch>
           <Route path="/" component={Home} exact />
+          <Route path="/aboutus" component={AboutUs} exact />
           <Route path="/signin" component={SignIn} exact />
           <Route path="/addProduct" component={AddProduct} exact />
-          <Route path="/shop" component={Product} pushCart={pushCart} exact />
-          <Route path="/treatment" component={Treatment} exact />
+          <Route path="/shop" component={Product} exact />
+          <Route path="/services" component={Services} exact />
+          <Route path="/treatment/:type" component={TreatmentType} exact />
           <Route path="/contactus" component={ContactUs} exact />
-          <Route path="/cart" component={Cart} pushCart={pushCart} exact />
+          <Route path="/cart" component={Cart} exact />
+          <Route path="/appointment" component={Appointment} exact />
         </Switch>
         <Footer />
       </Router>

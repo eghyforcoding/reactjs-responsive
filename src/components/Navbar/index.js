@@ -6,17 +6,14 @@ import {
   MobileIcon,
   NavMenu,
   NavItem,
-  NavLinks,
   NavBtn,
   NavBtnLink,
   IconWrapper,
   IconItem,
-  CartBtnLink,
   CartCount,
 } from "./NavbarElement";
 import { FaBars } from "react-icons/fa";
 import { TiShoppingCart } from "react-icons/ti";
-import { NavLink } from "react-router-dom";
 import { DataContext } from "../../components/context";
 
 const Navbar = ({ toggle, cartIncrement, cartCount }) => {
@@ -46,7 +43,7 @@ const Navbar = ({ toggle, cartIncrement, cartCount }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">About us</NavLinks>
+              <NavBtnLink to="/">Home</NavBtnLink>
             </NavItem>
             <NavItem>
               <NavBtnLink to="/shop">Shop</NavBtnLink>
@@ -55,7 +52,7 @@ const Navbar = ({ toggle, cartIncrement, cartCount }) => {
               <NavBtnLink to="/blog">Blog</NavBtnLink>
             </NavItem>
             <NavItem>
-              <NavBtnLink to="/treatment">Treatment</NavBtnLink>
+              <NavBtnLink to="/services">Services</NavBtnLink>
             </NavItem>
             <NavItem>
               <NavBtnLink to="/contactus">Contact us</NavBtnLink>

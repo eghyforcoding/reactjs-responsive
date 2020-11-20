@@ -1,18 +1,23 @@
 import styled from "styled-components";
+import { Link as LinkR } from "react-router-dom";
+
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 
-export const HeroContainer = styled.div`
-  background: #0c0c0c;
+export const GalleryContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 30px;
-  height: 800px;
+  height: 600px;
   position: relative;
   z-index: 1;
+
+  @media screen and (max-width: 850px) {
+    height: 400px;
+  }
 `;
 
-export const HeroBg = styled.div`
+export const GalleryBg = styled.div`
   position: absolute;
   top: 0;
   right: 0;
@@ -26,12 +31,12 @@ export const HeroBg = styled.div`
 export const ImgBg = styled.img`
   width: 100%;
   height: 100%;
-  --o-object-fit: cover;
+  object-fit: cover;
   object-fit: cover;
   background: #232a34;
 `;
 
-export const HeroContent = styled.div`
+export const GalleryContent = styled.div`
   z-index: 3;
   max-width: 1200px;
   position: absolute;
@@ -41,10 +46,11 @@ export const HeroContent = styled.div`
   align-items: center;
 `;
 
-export const HeroH1 = styled.h1`
-  color: black;
+export const GalleryTitle = styled.h1`
+  color: #f3f3f3;
   font-size: 48px;
   text-align: center;
+  /* font-weight: lighter; */
 
   @media screen and (max-width: 768px) {
     font-size: 40px;
@@ -55,10 +61,11 @@ export const HeroH1 = styled.h1`
   }
 `;
 
-export const HeroP = styled.p`
+export const GalleryLine = styled.p`
   margin-top: 24px;
-  color: black;
+  color: #f3f3f3;
   font-size: 24px;
+  /* font-weight: lighter; */
   text-align: center;
   max-width: 600px;
 
@@ -71,16 +78,25 @@ export const HeroP = styled.p`
   }
 `;
 
-export const HeroBtnWrapper = styled.div`
+export const GalleryBtnWrap = styled.div`
   margin-top: 32px;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
 `;
 
-export const ArrowForward = styled(MdArrowForward)`
-  margin-left: 8px;
+export const BtnLink = styled(LinkR)`
+  border-radius: 50px;
+  border: 1px solid white;
+  color: white;
+  /* font-weight: lighter; */
+  padding: 14px 48px;
   font-size: 20px;
-`;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
 
-export const ArrowRight = styled(MdKeyboardArrowRight)``;
+  &:hover {
+    background: brown;
+  }
+`;

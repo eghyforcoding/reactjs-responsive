@@ -23,10 +23,10 @@ export const DataProvider = ({ children }) => {
     localStorage.setItem("carts", JSON.stringify(carts));
     localStorage.setItem("subtotals", JSON.stringify(subtotals));
     setAddAction(false);
-  }, [carts, subtotals, addAction]);
+  }, [carts, subtotals]);
 
   const addCart = (newcart) => {
-    setAddAction(true);
+    // setAddAction(true);
     const data = { id: newcart.id, detail: newcart.data(), count: 1 };
     let keyIndex = null;
     if (tempCart !== null) {

@@ -50,7 +50,6 @@ export const useForm = (validateInfo) => {
     setErrors(validateInfo(values));
     console.log("---errors---", Object.keys(errors).length);
     if (Object.keys(errors).length === 0) {
-      console.log("---we re in");
       var uploadTask = myStorage
         .ref("/products")
         .child(values.pimage[0].name)
